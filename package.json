@@ -1,21 +1,12 @@
 {
-  "name": "3d-project",
+  "name": "3d-spherical-paint",
   "version": "0.1.0",
   "private": false,
   "homepage": "./",
   "dependencies": {
-    "@types/color": "^3.0.0",
-    "@types/lodash": "^4.14.97",
-    "@types/node": "^8.0.22",
-    "@types/superagent": "^3.5.7",
+    "@types/node": "^8.10.24",
     "babylonjs": "^3.2.0",
-    "babylonjs-post-process": "^3.2.0",
-    "gh-pages": "^1.0.0",
-    "gridbuilding": "^0.1.0",
-    "lodash": "^4.17.4",
-    "react-scripts-ts": "2.6.0",
-    "superagent": "^3.8.2",
-    "ts-keycode-enum": "^1.0.4"
+    "react-scripts-ts": "2.6.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -29,6 +20,7 @@
     "prettier-watch": "onchange \"**/*.{js,ts,tsx,json}\" -- npm run prettier"
   },
   "devDependencies": {
-    "prettier": "^1.13.7"
+    "gh-pages": "^1.2.0",
+    "prettier": "^1.14.2"
   }
 }
