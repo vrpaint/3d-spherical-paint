@@ -1,6 +1,6 @@
 import * as BABYLON from 'babylonjs';
 
-export default function setPlayerMouseLock(
+export function setPlayerMouseLock(
     canvasElement: HTMLCanvasElement,
     camera: BABYLON.FreeCamera,
 ) {
@@ -20,16 +20,7 @@ export default function setPlayerMouseLock(
         );
     }
 
-    //todo prevent spell creating when locking cursor
-    if ('onpointerlockchange' in document) {
-        document.addEventListener('pointerlockchange', lockChangeAlert, false);
-    } else if ('onmozpointerlockchange' in document) {
-        document.addEventListener(
-            'mozpointerlockchange',
-            lockChangeAlert,
-            false,
-        );
-    }
+    document.addEventListener('pointerlockchange', lockChangeAlert, false);
 
     function lockChangeAlert() {
         if (document.pointerLockElement === canvasElement) {

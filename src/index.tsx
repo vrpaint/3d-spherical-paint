@@ -1,4 +1,4 @@
-import World from './world/World';
+import { World } from './world/World/World';
 import './index.css';
 
 const canvasElement = document.getElementById('scene') as HTMLCanvasElement;

@@ -1,8 +1,0 @@
-{
-  "textures": {
-    "default": "grass.jpg",
-    "diffuse": "default",
-    "specular": "#ffeacb",
-    "emissive": "default"
-  }
-}
