@@ -9,6 +9,6 @@ export class Player {
 
     constructor(public world: World) {
         this.camera = createCamera(world);
-        setPlayerMouseLock(this.world.canvasElement, this.camera);
+        //setPlayerMouseLock(this.world.canvasElement, this.camera);
     }
 }

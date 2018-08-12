@@ -1,7 +1,7 @@
 import * as BABYLON from 'babylonjs';
 import { Player } from '../Player';
 import { createScene } from './createScene';
-import { createSphere } from './createSphere';
+import { createContext } from './createContext';
 
 export class World {
     public engine: BABYLON.Engine;
@@ -9,7 +9,7 @@ export class World {
     public webVR: boolean; //todo maybe enum
     public lights: BABYLON.Light[];
     public player: Player;
-    public sphereMesh: BABYLON.AbstractMesh;
+    public context: CanvasRenderingContext2D;
 
     constructor(public canvasElement: HTMLCanvasElement) {}
 
@@ -34,6 +34,26 @@ export class World {
 
         this.scene = createScene(this.engine);
         this.player = new Player(this);
-        this.sphereMesh = createSphere(this.scene);
+        this.context = createContext(this.scene);
+
+        const ctx = this.context;
+        ctx.beginPath();
+        ctx.rect(0,0,100,100);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(100,100);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(100,0);
+        ctx.lineTo(0,100);
+        ctx.stroke();
+
+
+
+
     }
 }
