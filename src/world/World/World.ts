@@ -53,7 +53,33 @@ export class World {
         ctx.stroke();
 
 
+        this.canvasElement.addEventListener('click',  ()=>{
+            const pickResult = this.scene.pick(this.scene.pointerX, this.scene.pointerY);
+
+            if(pickResult.pickedPoint){
+
+                console.log(pickResult.pickedPoint);
+                console.log(this.worldVectorToScreen(pickResult.pickedPoint));
+
+            }
+           
 
 
+         });
+
+
+
+    }
+
+
+
+    worldVectorToScreen(v:BABYLON.Vector3){
+        let iden = BABYLON.Matrix.Identity();
+        let camera = this.scene.activeCamera;
+
+        let p = BABYLON.Vector3.Project(v, iden, this.scene.getTransformMatrix(),
+                    camera.viewport.toGlobal(this.engine.getRenderWidth(), this.engine.getRenderHeight()));
+
+        return new BABYLON.Vector2(p.x, p.y);
     }
 }
